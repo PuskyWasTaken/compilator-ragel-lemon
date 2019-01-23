@@ -1,0 +1,1934 @@
+State 0:
+          program ::= * declarationList
+          declarationList ::= * declarationList declaration
+      (2) declarationList ::= *
+
+               declarationList shift  3
+                       program accept
+                     {default} reduce 2
+
+State 1:
+          declaration ::= * variableDeclaration
+          declaration ::= * statement
+          variableDeclaration ::= * INT IDEN ASSIGN expr SEMICOLON
+          variableDeclaration ::= * INT IDEN SEMICOLON
+          statement ::= * expr SEMICOLON
+          statement ::= * IF LPAREN expr RPAREN statement
+          statement ::= * IF LPAREN expr RPAREN statement ELSE statement
+          statement ::= * WHILE LPAREN expr RPAREN statement
+          statement ::= * DO statement WHILE LPAREN expr RPAREN
+          statement ::= * FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN statement
+          statement ::= * LBRACKET block RBRACKET
+          statement ::= LBRACKET * block RBRACKET
+          statement ::= * SEMICOLON
+          block ::= * declaration
+          block ::= * block declaration
+          expr ::= * IDEN ASSIGN expr
+          expr ::= * IDEN PEQ expr
+          expr ::= * IDEN SEQ expr
+          expr ::= * IDEN MEQ expr
+          expr ::= * IDEN DEQ expr
+          expr ::= * expr ADD expr
+          expr ::= * expr SUB expr
+          expr ::= * expr MUL expr
+          expr ::= * expr DIV expr
+          expr ::= * expr LEQ expr
+          expr ::= * expr BEQ expr
+          expr ::= * expr LTHAN expr
+          expr ::= * expr BTHAN expr
+          expr ::= * expr EQ expr
+          expr ::= * expr NEQ expr
+          expr ::= * expr AND expr
+          expr ::= * expr OR expr
+          expr ::= * LPAREN expr RPAREN
+          expr ::= * NUMBER
+          expr ::= * IDEN
+
+                        NUMBER shift  75
+                          IDEN shift  52
+                        LPAREN shift  15
+                           INT shift  62
+                     SEMICOLON shift  82
+                            IF shift  61
+                         WHILE shift  64
+                            DO shift  7
+                           FOR shift  60
+                      LBRACKET shift  1
+                          expr shift  39
+                     statement shift  77
+           variableDeclaration shift  79
+                   declaration shift  84
+                         block shift  2
+
+State 2:
+          declaration ::= * variableDeclaration
+          declaration ::= * statement
+          variableDeclaration ::= * INT IDEN ASSIGN expr SEMICOLON
+          variableDeclaration ::= * INT IDEN SEMICOLON
+          statement ::= * expr SEMICOLON
+          statement ::= * IF LPAREN expr RPAREN statement
+          statement ::= * IF LPAREN expr RPAREN statement ELSE statement
+          statement ::= * WHILE LPAREN expr RPAREN statement
+          statement ::= * DO statement WHILE LPAREN expr RPAREN
+          statement ::= * FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN statement
+          statement ::= * LBRACKET block RBRACKET
+          statement ::= LBRACKET block * RBRACKET
+          statement ::= * SEMICOLON
+          block ::= block * declaration
+          expr ::= * IDEN ASSIGN expr
+          expr ::= * IDEN PEQ expr
+          expr ::= * IDEN SEQ expr
+          expr ::= * IDEN MEQ expr
+          expr ::= * IDEN DEQ expr
+          expr ::= * expr ADD expr
+          expr ::= * expr SUB expr
+          expr ::= * expr MUL expr
+          expr ::= * expr DIV expr
+          expr ::= * expr LEQ expr
+          expr ::= * expr BEQ expr
+          expr ::= * expr LTHAN expr
+          expr ::= * expr BTHAN expr
+          expr ::= * expr EQ expr
+          expr ::= * expr NEQ expr
+          expr ::= * expr AND expr
+          expr ::= * expr OR expr
+          expr ::= * LPAREN expr RPAREN
+          expr ::= * NUMBER
+          expr ::= * IDEN
+
+                        NUMBER shift  75
+                          IDEN shift  52
+                        LPAREN shift  15
+                           INT shift  62
+                     SEMICOLON shift  82
+                            IF shift  61
+                         WHILE shift  64
+                            DO shift  7
+                           FOR shift  60
+                      LBRACKET shift  1
+                      RBRACKET shift  81
+                          expr shift  39
+                     statement shift  77
+           variableDeclaration shift  79
+                   declaration shift  83
+
+State 3:
+      (0) program ::= declarationList *
+          declarationList ::= declarationList * declaration
+          declaration ::= * variableDeclaration
+          declaration ::= * statement
+          variableDeclaration ::= * INT IDEN ASSIGN expr SEMICOLON
+          variableDeclaration ::= * INT IDEN SEMICOLON
+          statement ::= * expr SEMICOLON
+          statement ::= * IF LPAREN expr RPAREN statement
+          statement ::= * IF LPAREN expr RPAREN statement ELSE statement
+          statement ::= * WHILE LPAREN expr RPAREN statement
+          statement ::= * DO statement WHILE LPAREN expr RPAREN
+          statement ::= * FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN statement
+          statement ::= * LBRACKET block RBRACKET
+          statement ::= * SEMICOLON
+          expr ::= * IDEN ASSIGN expr
+          expr ::= * IDEN PEQ expr
+          expr ::= * IDEN SEQ expr
+          expr ::= * IDEN MEQ expr
+          expr ::= * IDEN DEQ expr
+          expr ::= * expr ADD expr
+          expr ::= * expr SUB expr
+          expr ::= * expr MUL expr
+          expr ::= * expr DIV expr
+          expr ::= * expr LEQ expr
+          expr ::= * expr BEQ expr
+          expr ::= * expr LTHAN expr
+          expr ::= * expr BTHAN expr
+          expr ::= * expr EQ expr
+          expr ::= * expr NEQ expr
+          expr ::= * expr AND expr
+          expr ::= * expr OR expr
+          expr ::= * LPAREN expr RPAREN
+          expr ::= * NUMBER
+          expr ::= * IDEN
+
+                             $ reduce 0
+                        NUMBER shift  75
+                          IDEN shift  52
+                        LPAREN shift  15
+                           INT shift  62
+                     SEMICOLON shift  82
+                            IF shift  61
+                         WHILE shift  64
+                            DO shift  7
+                           FOR shift  60
+                      LBRACKET shift  1
+                          expr shift  39
+                     statement shift  77
+           variableDeclaration shift  79
+                   declaration shift  80
+
+State 4:
+          statement ::= * expr SEMICOLON
+          statement ::= * IF LPAREN expr RPAREN statement
+          statement ::= * IF LPAREN expr RPAREN statement ELSE statement
+          statement ::= * WHILE LPAREN expr RPAREN statement
+          statement ::= * DO statement WHILE LPAREN expr RPAREN
+          statement ::= * FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN statement
+          statement ::= FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN * statement
+          statement ::= * LBRACKET block RBRACKET
+          statement ::= * SEMICOLON
+          expr ::= * IDEN ASSIGN expr
+          expr ::= * IDEN PEQ expr
+          expr ::= * IDEN SEQ expr
+          expr ::= * IDEN MEQ expr
+          expr ::= * IDEN DEQ expr
+          expr ::= * expr ADD expr
+          expr ::= * expr SUB expr
+          expr ::= * expr MUL expr
+          expr ::= * expr DIV expr
+          expr ::= * expr LEQ expr
+          expr ::= * expr BEQ expr
+          expr ::= * expr LTHAN expr
+          expr ::= * expr BTHAN expr
+          expr ::= * expr EQ expr
+          expr ::= * expr NEQ expr
+          expr ::= * expr AND expr
+          expr ::= * expr OR expr
+          expr ::= * LPAREN expr RPAREN
+          expr ::= * NUMBER
+          expr ::= * IDEN
+
+                        NUMBER shift  75
+                          IDEN shift  52
+                        LPAREN shift  15
+                     SEMICOLON shift  82
+                            IF shift  61
+                         WHILE shift  64
+                            DO shift  7
+                           FOR shift  60
+                      LBRACKET shift  1
+                          expr shift  39
+                     statement shift  78
+
+State 5:
+          statement ::= * expr SEMICOLON
+          statement ::= * IF LPAREN expr RPAREN statement
+          statement ::= IF LPAREN expr RPAREN * statement
+          statement ::= * IF LPAREN expr RPAREN statement ELSE statement
+          statement ::= IF LPAREN expr RPAREN * statement ELSE statement
+          statement ::= * WHILE LPAREN expr RPAREN statement
+          statement ::= * DO statement WHILE LPAREN expr RPAREN
+          statement ::= * FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN statement
+          statement ::= * LBRACKET block RBRACKET
+          statement ::= * SEMICOLON
+          expr ::= * IDEN ASSIGN expr
+          expr ::= * IDEN PEQ expr
+          expr ::= * IDEN SEQ expr
+          expr ::= * IDEN MEQ expr
+          expr ::= * IDEN DEQ expr
+          expr ::= * expr ADD expr
+          expr ::= * expr SUB expr
+          expr ::= * expr MUL expr
+          expr ::= * expr DIV expr
+          expr ::= * expr LEQ expr
+          expr ::= * expr BEQ expr
+          expr ::= * expr LTHAN expr
+          expr ::= * expr BTHAN expr
+          expr ::= * expr EQ expr
+          expr ::= * expr NEQ expr
+          expr ::= * expr AND expr
+          expr ::= * expr OR expr
+          expr ::= * LPAREN expr RPAREN
+          expr ::= * NUMBER
+          expr ::= * IDEN
+
+                        NUMBER shift  75
+                          IDEN shift  52
+                        LPAREN shift  15
+                     SEMICOLON shift  82
+                            IF shift  61
+                         WHILE shift  64
+                            DO shift  7
+                           FOR shift  60
+                      LBRACKET shift  1
+                          expr shift  39
+                     statement shift  63
+
+State 6:
+          statement ::= * expr SEMICOLON
+          statement ::= * IF LPAREN expr RPAREN statement
+          statement ::= * IF LPAREN expr RPAREN statement ELSE statement
+          statement ::= * WHILE LPAREN expr RPAREN statement
+          statement ::= WHILE LPAREN expr RPAREN * statement
+          statement ::= * DO statement WHILE LPAREN expr RPAREN
+          statement ::= * FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN statement
+          statement ::= * LBRACKET block RBRACKET
+          statement ::= * SEMICOLON
+          expr ::= * IDEN ASSIGN expr
+          expr ::= * IDEN PEQ expr
+          expr ::= * IDEN SEQ expr
+          expr ::= * IDEN MEQ expr
+          expr ::= * IDEN DEQ expr
+          expr ::= * expr ADD expr
+          expr ::= * expr SUB expr
+          expr ::= * expr MUL expr
+          expr ::= * expr DIV expr
+          expr ::= * expr LEQ expr
+          expr ::= * expr BEQ expr
+          expr ::= * expr LTHAN expr
+          expr ::= * expr BTHAN expr
+          expr ::= * expr EQ expr
+          expr ::= * expr NEQ expr
+          expr ::= * expr AND expr
+          expr ::= * expr OR expr
+          expr ::= * LPAREN expr RPAREN
+          expr ::= * NUMBER
+          expr ::= * IDEN
+
+                        NUMBER shift  75
+                          IDEN shift  52
+                        LPAREN shift  15
+                     SEMICOLON shift  82
+                            IF shift  61
+                         WHILE shift  64
+                            DO shift  7
+                           FOR shift  60
+                      LBRACKET shift  1
+                          expr shift  39
+                     statement shift  67
+
+State 7:
+          statement ::= * expr SEMICOLON
+          statement ::= * IF LPAREN expr RPAREN statement
+          statement ::= * IF LPAREN expr RPAREN statement ELSE statement
+          statement ::= * WHILE LPAREN expr RPAREN statement
+          statement ::= * DO statement WHILE LPAREN expr RPAREN
+          statement ::= DO * statement WHILE LPAREN expr RPAREN
+          statement ::= * FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN statement
+          statement ::= * LBRACKET block RBRACKET
+          statement ::= * SEMICOLON
+          expr ::= * IDEN ASSIGN expr
+          expr ::= * IDEN PEQ expr
+          expr ::= * IDEN SEQ expr
+          expr ::= * IDEN MEQ expr
+          expr ::= * IDEN DEQ expr
+          expr ::= * expr ADD expr
+          expr ::= * expr SUB expr
+          expr ::= * expr MUL expr
+          expr ::= * expr DIV expr
+          expr ::= * expr LEQ expr
+          expr ::= * expr BEQ expr
+          expr ::= * expr LTHAN expr
+          expr ::= * expr BTHAN expr
+          expr ::= * expr EQ expr
+          expr ::= * expr NEQ expr
+          expr ::= * expr AND expr
+          expr ::= * expr OR expr
+          expr ::= * LPAREN expr RPAREN
+          expr ::= * NUMBER
+          expr ::= * IDEN
+
+                        NUMBER shift  75
+                          IDEN shift  52
+                        LPAREN shift  15
+                     SEMICOLON shift  82
+                            IF shift  61
+                         WHILE shift  64
+                            DO shift  7
+                           FOR shift  60
+                      LBRACKET shift  1
+                          expr shift  39
+                     statement shift  65
+
+State 8:
+          statement ::= * expr SEMICOLON
+          statement ::= * IF LPAREN expr RPAREN statement
+          statement ::= * IF LPAREN expr RPAREN statement ELSE statement
+          statement ::= IF LPAREN expr RPAREN statement ELSE * statement
+          statement ::= * WHILE LPAREN expr RPAREN statement
+          statement ::= * DO statement WHILE LPAREN expr RPAREN
+          statement ::= * FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN statement
+          statement ::= * LBRACKET block RBRACKET
+          statement ::= * SEMICOLON
+          expr ::= * IDEN ASSIGN expr
+          expr ::= * IDEN PEQ expr
+          expr ::= * IDEN SEQ expr
+          expr ::= * IDEN MEQ expr
+          expr ::= * IDEN DEQ expr
+          expr ::= * expr ADD expr
+          expr ::= * expr SUB expr
+          expr ::= * expr MUL expr
+          expr ::= * expr DIV expr
+          expr ::= * expr LEQ expr
+          expr ::= * expr BEQ expr
+          expr ::= * expr LTHAN expr
+          expr ::= * expr BTHAN expr
+          expr ::= * expr EQ expr
+          expr ::= * expr NEQ expr
+          expr ::= * expr AND expr
+          expr ::= * expr OR expr
+          expr ::= * LPAREN expr RPAREN
+          expr ::= * NUMBER
+          expr ::= * IDEN
+
+                        NUMBER shift  75
+                          IDEN shift  52
+                        LPAREN shift  15
+                     SEMICOLON shift  82
+                            IF shift  61
+                         WHILE shift  64
+                            DO shift  7
+                           FOR shift  60
+                      LBRACKET shift  1
+                          expr shift  39
+                     statement shift  70
+
+State 9:
+          expr ::= * IDEN ASSIGN expr
+          expr ::= * IDEN PEQ expr
+          expr ::= IDEN PEQ * expr
+          expr ::= * IDEN SEQ expr
+          expr ::= * IDEN MEQ expr
+          expr ::= * IDEN DEQ expr
+          expr ::= * expr ADD expr
+          expr ::= * expr SUB expr
+          expr ::= * expr MUL expr
+          expr ::= * expr DIV expr
+          expr ::= * expr LEQ expr
+          expr ::= * expr BEQ expr
+          expr ::= * expr LTHAN expr
+          expr ::= * expr BTHAN expr
+          expr ::= * expr EQ expr
+          expr ::= * expr NEQ expr
+          expr ::= * expr AND expr
+          expr ::= * expr OR expr
+          expr ::= * LPAREN expr RPAREN
+          expr ::= * NUMBER
+          expr ::= * IDEN
+
+                        NUMBER shift  75
+                          IDEN shift  52
+                        LPAREN shift  15
+                          expr shift  46
+
+State 10:
+          expr ::= * IDEN ASSIGN expr
+          expr ::= * IDEN PEQ expr
+          expr ::= * IDEN SEQ expr
+          expr ::= * IDEN MEQ expr
+          expr ::= * IDEN DEQ expr
+          expr ::= * expr ADD expr
+          expr ::= expr ADD * expr
+          expr ::= * expr SUB expr
+          expr ::= * expr MUL expr
+          expr ::= * expr DIV expr
+          expr ::= * expr LEQ expr
+          expr ::= * expr BEQ expr
+          expr ::= * expr LTHAN expr
+          expr ::= * expr BTHAN expr
+          expr ::= * expr EQ expr
+          expr ::= * expr NEQ expr
+          expr ::= * expr AND expr
+          expr ::= * expr OR expr
+          expr ::= * LPAREN expr RPAREN
+          expr ::= * NUMBER
+          expr ::= * IDEN
+
+                        NUMBER shift  75
+                          IDEN shift  52
+                        LPAREN shift  15
+                          expr shift  57
+
+State 11:
+          statement ::= FOR LPAREN expr SEMICOLON * expr SEMICOLON expr RPAREN statement
+          expr ::= * IDEN ASSIGN expr
+          expr ::= * IDEN PEQ expr
+          expr ::= * IDEN SEQ expr
+          expr ::= * IDEN MEQ expr
+          expr ::= * IDEN DEQ expr
+          expr ::= * expr ADD expr
+          expr ::= * expr SUB expr
+          expr ::= * expr MUL expr
+          expr ::= * expr DIV expr
+          expr ::= * expr LEQ expr
+          expr ::= * expr BEQ expr
+          expr ::= * expr LTHAN expr
+          expr ::= * expr BTHAN expr
+          expr ::= * expr EQ expr
+          expr ::= * expr NEQ expr
+          expr ::= * expr AND expr
+          expr ::= * expr OR expr
+          expr ::= * LPAREN expr RPAREN
+          expr ::= * NUMBER
+          expr ::= * IDEN
+
+                        NUMBER shift  75
+                          IDEN shift  52
+                        LPAREN shift  15
+                          expr shift  40
+
+State 12:
+          expr ::= * IDEN ASSIGN expr
+          expr ::= IDEN ASSIGN * expr
+          expr ::= * IDEN PEQ expr
+          expr ::= * IDEN SEQ expr
+          expr ::= * IDEN MEQ expr
+          expr ::= * IDEN DEQ expr
+          expr ::= * expr ADD expr
+          expr ::= * expr SUB expr
+          expr ::= * expr MUL expr
+          expr ::= * expr DIV expr
+          expr ::= * expr LEQ expr
+          expr ::= * expr BEQ expr
+          expr ::= * expr LTHAN expr
+          expr ::= * expr BTHAN expr
+          expr ::= * expr EQ expr
+          expr ::= * expr NEQ expr
+          expr ::= * expr AND expr
+          expr ::= * expr OR expr
+          expr ::= * LPAREN expr RPAREN
+          expr ::= * NUMBER
+          expr ::= * IDEN
+
+                        NUMBER shift  75
+                          IDEN shift  52
+                        LPAREN shift  15
+                          expr shift  43
+
+State 13:
+          statement ::= IF LPAREN * expr RPAREN statement
+          statement ::= IF LPAREN * expr RPAREN statement ELSE statement
+          expr ::= * IDEN ASSIGN expr
+          expr ::= * IDEN PEQ expr
+          expr ::= * IDEN SEQ expr
+          expr ::= * IDEN MEQ expr
+          expr ::= * IDEN DEQ expr
+          expr ::= * expr ADD expr
+          expr ::= * expr SUB expr
+          expr ::= * expr MUL expr
+          expr ::= * expr DIV expr
+          expr ::= * expr LEQ expr
+          expr ::= * expr BEQ expr
+          expr ::= * expr LTHAN expr
+          expr ::= * expr BTHAN expr
+          expr ::= * expr EQ expr
+          expr ::= * expr NEQ expr
+          expr ::= * expr AND expr
+          expr ::= * expr OR expr
+          expr ::= * LPAREN expr RPAREN
+          expr ::= * NUMBER
+          expr ::= * IDEN
+
+                        NUMBER shift  75
+                          IDEN shift  52
+                        LPAREN shift  15
+                          expr shift  35
+
+State 14:
+          expr ::= * IDEN ASSIGN expr
+          expr ::= * IDEN PEQ expr
+          expr ::= * IDEN SEQ expr
+          expr ::= * IDEN MEQ expr
+          expr ::= * IDEN DEQ expr
+          expr ::= * expr ADD expr
+          expr ::= * expr SUB expr
+          expr ::= expr SUB * expr
+          expr ::= * expr MUL expr
+          expr ::= * expr DIV expr
+          expr ::= * expr LEQ expr
+          expr ::= * expr BEQ expr
+          expr ::= * expr LTHAN expr
+          expr ::= * expr BTHAN expr
+          expr ::= * expr EQ expr
+          expr ::= * expr NEQ expr
+          expr ::= * expr AND expr
+          expr ::= * expr OR expr
+          expr ::= * LPAREN expr RPAREN
+          expr ::= * NUMBER
+          expr ::= * IDEN
+
+                        NUMBER shift  75
+                          IDEN shift  52
+                        LPAREN shift  15
+                          expr shift  59
+
+State 15:
+          expr ::= * IDEN ASSIGN expr
+          expr ::= * IDEN PEQ expr
+          expr ::= * IDEN SEQ expr
+          expr ::= * IDEN MEQ expr
+          expr ::= * IDEN DEQ expr
+          expr ::= * expr ADD expr
+          expr ::= * expr SUB expr
+          expr ::= * expr MUL expr
+          expr ::= * expr DIV expr
+          expr ::= * expr LEQ expr
+          expr ::= * expr BEQ expr
+          expr ::= * expr LTHAN expr
+          expr ::= * expr BTHAN expr
+          expr ::= * expr EQ expr
+          expr ::= * expr NEQ expr
+          expr ::= * expr AND expr
+          expr ::= * expr OR expr
+          expr ::= * LPAREN expr RPAREN
+          expr ::= LPAREN * expr RPAREN
+          expr ::= * NUMBER
+          expr ::= * IDEN
+
+                        NUMBER shift  75
+                          IDEN shift  52
+                        LPAREN shift  15
+                          expr shift  37
+
+State 16:
+          expr ::= * IDEN ASSIGN expr
+          expr ::= * IDEN PEQ expr
+          expr ::= * IDEN SEQ expr
+          expr ::= IDEN SEQ * expr
+          expr ::= * IDEN MEQ expr
+          expr ::= * IDEN DEQ expr
+          expr ::= * expr ADD expr
+          expr ::= * expr SUB expr
+          expr ::= * expr MUL expr
+          expr ::= * expr DIV expr
+          expr ::= * expr LEQ expr
+          expr ::= * expr BEQ expr
+          expr ::= * expr LTHAN expr
+          expr ::= * expr BTHAN expr
+          expr ::= * expr EQ expr
+          expr ::= * expr NEQ expr
+          expr ::= * expr AND expr
+          expr ::= * expr OR expr
+          expr ::= * LPAREN expr RPAREN
+          expr ::= * NUMBER
+          expr ::= * IDEN
+
+                        NUMBER shift  75
+                          IDEN shift  52
+                        LPAREN shift  15
+                          expr shift  45
+
+State 17:
+          statement ::= FOR LPAREN * expr SEMICOLON expr SEMICOLON expr RPAREN statement
+          expr ::= * IDEN ASSIGN expr
+          expr ::= * IDEN PEQ expr
+          expr ::= * IDEN SEQ expr
+          expr ::= * IDEN MEQ expr
+          expr ::= * IDEN DEQ expr
+          expr ::= * expr ADD expr
+          expr ::= * expr SUB expr
+          expr ::= * expr MUL expr
+          expr ::= * expr DIV expr
+          expr ::= * expr LEQ expr
+          expr ::= * expr BEQ expr
+          expr ::= * expr LTHAN expr
+          expr ::= * expr BTHAN expr
+          expr ::= * expr EQ expr
+          expr ::= * expr NEQ expr
+          expr ::= * expr AND expr
+          expr ::= * expr OR expr
+          expr ::= * LPAREN expr RPAREN
+          expr ::= * NUMBER
+          expr ::= * IDEN
+
+                        NUMBER shift  75
+                          IDEN shift  52
+                        LPAREN shift  15
+                          expr shift  36
+
+State 18:
+          expr ::= * IDEN ASSIGN expr
+          expr ::= * IDEN PEQ expr
+          expr ::= * IDEN SEQ expr
+          expr ::= * IDEN MEQ expr
+          expr ::= * IDEN DEQ expr
+          expr ::= * expr ADD expr
+          expr ::= * expr SUB expr
+          expr ::= * expr MUL expr
+          expr ::= * expr DIV expr
+          expr ::= expr DIV * expr
+          expr ::= * expr LEQ expr
+          expr ::= * expr BEQ expr
+          expr ::= * expr LTHAN expr
+          expr ::= * expr BTHAN expr
+          expr ::= * expr EQ expr
+          expr ::= * expr NEQ expr
+          expr ::= * expr AND expr
+          expr ::= * expr OR expr
+          expr ::= * LPAREN expr RPAREN
+          expr ::= * NUMBER
+          expr ::= * IDEN
+
+                        NUMBER shift  75
+                          IDEN shift  52
+                        LPAREN shift  15
+                          expr shift  68
+
+State 19:
+          expr ::= * IDEN ASSIGN expr
+          expr ::= * IDEN PEQ expr
+          expr ::= * IDEN SEQ expr
+          expr ::= * IDEN MEQ expr
+          expr ::= * IDEN DEQ expr
+          expr ::= * expr ADD expr
+          expr ::= * expr SUB expr
+          expr ::= * expr MUL expr
+          expr ::= * expr DIV expr
+          expr ::= * expr LEQ expr
+          expr ::= * expr BEQ expr
+          expr ::= * expr LTHAN expr
+          expr ::= * expr BTHAN expr
+          expr ::= * expr EQ expr
+          expr ::= * expr NEQ expr
+          expr ::= * expr AND expr
+          expr ::= * expr OR expr
+          expr ::= expr OR * expr
+          expr ::= * LPAREN expr RPAREN
+          expr ::= * NUMBER
+          expr ::= * IDEN
+
+                        NUMBER shift  75
+                          IDEN shift  52
+                        LPAREN shift  15
+                          expr shift  48
+
+State 20:
+          expr ::= * IDEN ASSIGN expr
+          expr ::= * IDEN PEQ expr
+          expr ::= * IDEN SEQ expr
+          expr ::= * IDEN MEQ expr
+          expr ::= * IDEN DEQ expr
+          expr ::= * expr ADD expr
+          expr ::= * expr SUB expr
+          expr ::= * expr MUL expr
+          expr ::= * expr DIV expr
+          expr ::= * expr LEQ expr
+          expr ::= expr LEQ * expr
+          expr ::= * expr BEQ expr
+          expr ::= * expr LTHAN expr
+          expr ::= * expr BTHAN expr
+          expr ::= * expr EQ expr
+          expr ::= * expr NEQ expr
+          expr ::= * expr AND expr
+          expr ::= * expr OR expr
+          expr ::= * LPAREN expr RPAREN
+          expr ::= * NUMBER
+          expr ::= * IDEN
+
+                        NUMBER shift  75
+                          IDEN shift  52
+                        LPAREN shift  15
+                          expr shift  55
+
+State 21:
+          statement ::= DO statement WHILE LPAREN * expr RPAREN
+          expr ::= * IDEN ASSIGN expr
+          expr ::= * IDEN PEQ expr
+          expr ::= * IDEN SEQ expr
+          expr ::= * IDEN MEQ expr
+          expr ::= * IDEN DEQ expr
+          expr ::= * expr ADD expr
+          expr ::= * expr SUB expr
+          expr ::= * expr MUL expr
+          expr ::= * expr DIV expr
+          expr ::= * expr LEQ expr
+          expr ::= * expr BEQ expr
+          expr ::= * expr LTHAN expr
+          expr ::= * expr BTHAN expr
+          expr ::= * expr EQ expr
+          expr ::= * expr NEQ expr
+          expr ::= * expr AND expr
+          expr ::= * expr OR expr
+          expr ::= * LPAREN expr RPAREN
+          expr ::= * NUMBER
+          expr ::= * IDEN
+
+                        NUMBER shift  75
+                          IDEN shift  52
+                        LPAREN shift  15
+                          expr shift  34
+
+State 22:
+          expr ::= * IDEN ASSIGN expr
+          expr ::= * IDEN PEQ expr
+          expr ::= * IDEN SEQ expr
+          expr ::= * IDEN MEQ expr
+          expr ::= * IDEN DEQ expr
+          expr ::= * expr ADD expr
+          expr ::= * expr SUB expr
+          expr ::= * expr MUL expr
+          expr ::= * expr DIV expr
+          expr ::= * expr LEQ expr
+          expr ::= * expr BEQ expr
+          expr ::= expr BEQ * expr
+          expr ::= * expr LTHAN expr
+          expr ::= * expr BTHAN expr
+          expr ::= * expr EQ expr
+          expr ::= * expr NEQ expr
+          expr ::= * expr AND expr
+          expr ::= * expr OR expr
+          expr ::= * LPAREN expr RPAREN
+          expr ::= * NUMBER
+          expr ::= * IDEN
+
+                        NUMBER shift  75
+                          IDEN shift  52
+                        LPAREN shift  15
+                          expr shift  53
+
+State 23:
+          variableDeclaration ::= INT IDEN ASSIGN * expr SEMICOLON
+          expr ::= * IDEN ASSIGN expr
+          expr ::= * IDEN PEQ expr
+          expr ::= * IDEN SEQ expr
+          expr ::= * IDEN MEQ expr
+          expr ::= * IDEN DEQ expr
+          expr ::= * expr ADD expr
+          expr ::= * expr SUB expr
+          expr ::= * expr MUL expr
+          expr ::= * expr DIV expr
+          expr ::= * expr LEQ expr
+          expr ::= * expr BEQ expr
+          expr ::= * expr LTHAN expr
+          expr ::= * expr BTHAN expr
+          expr ::= * expr EQ expr
+          expr ::= * expr NEQ expr
+          expr ::= * expr AND expr
+          expr ::= * expr OR expr
+          expr ::= * LPAREN expr RPAREN
+          expr ::= * NUMBER
+          expr ::= * IDEN
+
+                        NUMBER shift  75
+                          IDEN shift  52
+                        LPAREN shift  15
+                          expr shift  41
+
+State 24:
+          expr ::= * IDEN ASSIGN expr
+          expr ::= * IDEN PEQ expr
+          expr ::= * IDEN SEQ expr
+          expr ::= * IDEN MEQ expr
+          expr ::= * IDEN DEQ expr
+          expr ::= * expr ADD expr
+          expr ::= * expr SUB expr
+          expr ::= * expr MUL expr
+          expr ::= * expr DIV expr
+          expr ::= * expr LEQ expr
+          expr ::= * expr BEQ expr
+          expr ::= * expr LTHAN expr
+          expr ::= expr LTHAN * expr
+          expr ::= * expr BTHAN expr
+          expr ::= * expr EQ expr
+          expr ::= * expr NEQ expr
+          expr ::= * expr AND expr
+          expr ::= * expr OR expr
+          expr ::= * LPAREN expr RPAREN
+          expr ::= * NUMBER
+          expr ::= * IDEN
+
+                        NUMBER shift  75
+                          IDEN shift  52
+                        LPAREN shift  15
+                          expr shift  56
+
+State 25:
+          statement ::= FOR LPAREN expr SEMICOLON expr SEMICOLON * expr RPAREN statement
+          expr ::= * IDEN ASSIGN expr
+          expr ::= * IDEN PEQ expr
+          expr ::= * IDEN SEQ expr
+          expr ::= * IDEN MEQ expr
+          expr ::= * IDEN DEQ expr
+          expr ::= * expr ADD expr
+          expr ::= * expr SUB expr
+          expr ::= * expr MUL expr
+          expr ::= * expr DIV expr
+          expr ::= * expr LEQ expr
+          expr ::= * expr BEQ expr
+          expr ::= * expr LTHAN expr
+          expr ::= * expr BTHAN expr
+          expr ::= * expr EQ expr
+          expr ::= * expr NEQ expr
+          expr ::= * expr AND expr
+          expr ::= * expr OR expr
+          expr ::= * LPAREN expr RPAREN
+          expr ::= * NUMBER
+          expr ::= * IDEN
+
+                        NUMBER shift  75
+                          IDEN shift  52
+                        LPAREN shift  15
+                          expr shift  38
+
+State 26:
+          expr ::= * IDEN ASSIGN expr
+          expr ::= * IDEN PEQ expr
+          expr ::= * IDEN SEQ expr
+          expr ::= * IDEN MEQ expr
+          expr ::= * IDEN DEQ expr
+          expr ::= * expr ADD expr
+          expr ::= * expr SUB expr
+          expr ::= * expr MUL expr
+          expr ::= * expr DIV expr
+          expr ::= * expr LEQ expr
+          expr ::= * expr BEQ expr
+          expr ::= * expr LTHAN expr
+          expr ::= * expr BTHAN expr
+          expr ::= expr BTHAN * expr
+          expr ::= * expr EQ expr
+          expr ::= * expr NEQ expr
+          expr ::= * expr AND expr
+          expr ::= * expr OR expr
+          expr ::= * LPAREN expr RPAREN
+          expr ::= * NUMBER
+          expr ::= * IDEN
+
+                        NUMBER shift  75
+                          IDEN shift  52
+                        LPAREN shift  15
+                          expr shift  54
+
+State 27:
+          expr ::= * IDEN ASSIGN expr
+          expr ::= * IDEN PEQ expr
+          expr ::= * IDEN SEQ expr
+          expr ::= * IDEN MEQ expr
+          expr ::= IDEN MEQ * expr
+          expr ::= * IDEN DEQ expr
+          expr ::= * expr ADD expr
+          expr ::= * expr SUB expr
+          expr ::= * expr MUL expr
+          expr ::= * expr DIV expr
+          expr ::= * expr LEQ expr
+          expr ::= * expr BEQ expr
+          expr ::= * expr LTHAN expr
+          expr ::= * expr BTHAN expr
+          expr ::= * expr EQ expr
+          expr ::= * expr NEQ expr
+          expr ::= * expr AND expr
+          expr ::= * expr OR expr
+          expr ::= * LPAREN expr RPAREN
+          expr ::= * NUMBER
+          expr ::= * IDEN
+
+                        NUMBER shift  75
+                          IDEN shift  52
+                        LPAREN shift  15
+                          expr shift  44
+
+State 28:
+          expr ::= * IDEN ASSIGN expr
+          expr ::= * IDEN PEQ expr
+          expr ::= * IDEN SEQ expr
+          expr ::= * IDEN MEQ expr
+          expr ::= * IDEN DEQ expr
+          expr ::= * expr ADD expr
+          expr ::= * expr SUB expr
+          expr ::= * expr MUL expr
+          expr ::= * expr DIV expr
+          expr ::= * expr LEQ expr
+          expr ::= * expr BEQ expr
+          expr ::= * expr LTHAN expr
+          expr ::= * expr BTHAN expr
+          expr ::= * expr EQ expr
+          expr ::= expr EQ * expr
+          expr ::= * expr NEQ expr
+          expr ::= * expr AND expr
+          expr ::= * expr OR expr
+          expr ::= * LPAREN expr RPAREN
+          expr ::= * NUMBER
+          expr ::= * IDEN
+
+                        NUMBER shift  75
+                          IDEN shift  52
+                        LPAREN shift  15
+                          expr shift  51
+
+State 29:
+          statement ::= WHILE LPAREN * expr RPAREN statement
+          expr ::= * IDEN ASSIGN expr
+          expr ::= * IDEN PEQ expr
+          expr ::= * IDEN SEQ expr
+          expr ::= * IDEN MEQ expr
+          expr ::= * IDEN DEQ expr
+          expr ::= * expr ADD expr
+          expr ::= * expr SUB expr
+          expr ::= * expr MUL expr
+          expr ::= * expr DIV expr
+          expr ::= * expr LEQ expr
+          expr ::= * expr BEQ expr
+          expr ::= * expr LTHAN expr
+          expr ::= * expr BTHAN expr
+          expr ::= * expr EQ expr
+          expr ::= * expr NEQ expr
+          expr ::= * expr AND expr
+          expr ::= * expr OR expr
+          expr ::= * LPAREN expr RPAREN
+          expr ::= * NUMBER
+          expr ::= * IDEN
+
+                        NUMBER shift  75
+                          IDEN shift  52
+                        LPAREN shift  15
+                          expr shift  42
+
+State 30:
+          expr ::= * IDEN ASSIGN expr
+          expr ::= * IDEN PEQ expr
+          expr ::= * IDEN SEQ expr
+          expr ::= * IDEN MEQ expr
+          expr ::= * IDEN DEQ expr
+          expr ::= * expr ADD expr
+          expr ::= * expr SUB expr
+          expr ::= * expr MUL expr
+          expr ::= * expr DIV expr
+          expr ::= * expr LEQ expr
+          expr ::= * expr BEQ expr
+          expr ::= * expr LTHAN expr
+          expr ::= * expr BTHAN expr
+          expr ::= * expr EQ expr
+          expr ::= * expr NEQ expr
+          expr ::= expr NEQ * expr
+          expr ::= * expr AND expr
+          expr ::= * expr OR expr
+          expr ::= * LPAREN expr RPAREN
+          expr ::= * NUMBER
+          expr ::= * IDEN
+
+                        NUMBER shift  75
+                          IDEN shift  52
+                        LPAREN shift  15
+                          expr shift  50
+
+State 31:
+          expr ::= * IDEN ASSIGN expr
+          expr ::= * IDEN PEQ expr
+          expr ::= * IDEN SEQ expr
+          expr ::= * IDEN MEQ expr
+          expr ::= * IDEN DEQ expr
+          expr ::= * expr ADD expr
+          expr ::= * expr SUB expr
+          expr ::= * expr MUL expr
+          expr ::= expr MUL * expr
+          expr ::= * expr DIV expr
+          expr ::= * expr LEQ expr
+          expr ::= * expr BEQ expr
+          expr ::= * expr LTHAN expr
+          expr ::= * expr BTHAN expr
+          expr ::= * expr EQ expr
+          expr ::= * expr NEQ expr
+          expr ::= * expr AND expr
+          expr ::= * expr OR expr
+          expr ::= * LPAREN expr RPAREN
+          expr ::= * NUMBER
+          expr ::= * IDEN
+
+                        NUMBER shift  75
+                          IDEN shift  52
+                        LPAREN shift  15
+                          expr shift  71
+
+State 32:
+          expr ::= * IDEN ASSIGN expr
+          expr ::= * IDEN PEQ expr
+          expr ::= * IDEN SEQ expr
+          expr ::= * IDEN MEQ expr
+          expr ::= * IDEN DEQ expr
+          expr ::= * expr ADD expr
+          expr ::= * expr SUB expr
+          expr ::= * expr MUL expr
+          expr ::= * expr DIV expr
+          expr ::= * expr LEQ expr
+          expr ::= * expr BEQ expr
+          expr ::= * expr LTHAN expr
+          expr ::= * expr BTHAN expr
+          expr ::= * expr EQ expr
+          expr ::= * expr NEQ expr
+          expr ::= * expr AND expr
+          expr ::= expr AND * expr
+          expr ::= * expr OR expr
+          expr ::= * LPAREN expr RPAREN
+          expr ::= * NUMBER
+          expr ::= * IDEN
+
+                        NUMBER shift  75
+                          IDEN shift  52
+                        LPAREN shift  15
+                          expr shift  49
+
+State 33:
+          expr ::= * IDEN ASSIGN expr
+          expr ::= * IDEN PEQ expr
+          expr ::= * IDEN SEQ expr
+          expr ::= * IDEN MEQ expr
+          expr ::= * IDEN DEQ expr
+          expr ::= IDEN DEQ * expr
+          expr ::= * expr ADD expr
+          expr ::= * expr SUB expr
+          expr ::= * expr MUL expr
+          expr ::= * expr DIV expr
+          expr ::= * expr LEQ expr
+          expr ::= * expr BEQ expr
+          expr ::= * expr LTHAN expr
+          expr ::= * expr BTHAN expr
+          expr ::= * expr EQ expr
+          expr ::= * expr NEQ expr
+          expr ::= * expr AND expr
+          expr ::= * expr OR expr
+          expr ::= * LPAREN expr RPAREN
+          expr ::= * NUMBER
+          expr ::= * IDEN
+
+                        NUMBER shift  75
+                          IDEN shift  52
+                        LPAREN shift  15
+                          expr shift  47
+
+State 34:
+          statement ::= DO statement WHILE LPAREN expr * RPAREN
+          expr ::= expr * ADD expr
+          expr ::= expr * SUB expr
+          expr ::= expr * MUL expr
+          expr ::= expr * DIV expr
+          expr ::= expr * LEQ expr
+          expr ::= expr * BEQ expr
+          expr ::= expr * LTHAN expr
+          expr ::= expr * BTHAN expr
+          expr ::= expr * EQ expr
+          expr ::= expr * NEQ expr
+          expr ::= expr * AND expr
+          expr ::= expr * OR expr
+
+                            OR shift  19
+                           AND shift  32
+                            EQ shift  28
+                           NEQ shift  30
+                         BTHAN shift  26
+                         LTHAN shift  24
+                           LEQ shift  20
+                           BEQ shift  22
+                           ADD shift  10
+                           SUB shift  14
+                           MUL shift  31
+                           DIV shift  18
+                        RPAREN shift  69
+
+State 35:
+          statement ::= IF LPAREN expr * RPAREN statement
+          statement ::= IF LPAREN expr * RPAREN statement ELSE statement
+          expr ::= expr * ADD expr
+          expr ::= expr * SUB expr
+          expr ::= expr * MUL expr
+          expr ::= expr * DIV expr
+          expr ::= expr * LEQ expr
+          expr ::= expr * BEQ expr
+          expr ::= expr * LTHAN expr
+          expr ::= expr * BTHAN expr
+          expr ::= expr * EQ expr
+          expr ::= expr * NEQ expr
+          expr ::= expr * AND expr
+          expr ::= expr * OR expr
+
+                            OR shift  19
+                           AND shift  32
+                            EQ shift  28
+                           NEQ shift  30
+                         BTHAN shift  26
+                         LTHAN shift  24
+                           LEQ shift  20
+                           BEQ shift  22
+                           ADD shift  10
+                           SUB shift  14
+                           MUL shift  31
+                           DIV shift  18
+                        RPAREN shift  5
+
+State 36:
+          statement ::= FOR LPAREN expr * SEMICOLON expr SEMICOLON expr RPAREN statement
+          expr ::= expr * ADD expr
+          expr ::= expr * SUB expr
+          expr ::= expr * MUL expr
+          expr ::= expr * DIV expr
+          expr ::= expr * LEQ expr
+          expr ::= expr * BEQ expr
+          expr ::= expr * LTHAN expr
+          expr ::= expr * BTHAN expr
+          expr ::= expr * EQ expr
+          expr ::= expr * NEQ expr
+          expr ::= expr * AND expr
+          expr ::= expr * OR expr
+
+                            OR shift  19
+                           AND shift  32
+                            EQ shift  28
+                           NEQ shift  30
+                         BTHAN shift  26
+                         LTHAN shift  24
+                           LEQ shift  20
+                           BEQ shift  22
+                           ADD shift  10
+                           SUB shift  14
+                           MUL shift  31
+                           DIV shift  18
+                     SEMICOLON shift  11
+
+State 37:
+          expr ::= expr * ADD expr
+          expr ::= expr * SUB expr
+          expr ::= expr * MUL expr
+          expr ::= expr * DIV expr
+          expr ::= expr * LEQ expr
+          expr ::= expr * BEQ expr
+          expr ::= expr * LTHAN expr
+          expr ::= expr * BTHAN expr
+          expr ::= expr * EQ expr
+          expr ::= expr * NEQ expr
+          expr ::= expr * AND expr
+          expr ::= expr * OR expr
+          expr ::= LPAREN expr * RPAREN
+
+                            OR shift  19
+                           AND shift  32
+                            EQ shift  28
+                           NEQ shift  30
+                         BTHAN shift  26
+                         LTHAN shift  24
+                           LEQ shift  20
+                           BEQ shift  22
+                           ADD shift  10
+                           SUB shift  14
+                           MUL shift  31
+                           DIV shift  18
+                        RPAREN shift  72
+
+State 38:
+          statement ::= FOR LPAREN expr SEMICOLON expr SEMICOLON expr * RPAREN statement
+          expr ::= expr * ADD expr
+          expr ::= expr * SUB expr
+          expr ::= expr * MUL expr
+          expr ::= expr * DIV expr
+          expr ::= expr * LEQ expr
+          expr ::= expr * BEQ expr
+          expr ::= expr * LTHAN expr
+          expr ::= expr * BTHAN expr
+          expr ::= expr * EQ expr
+          expr ::= expr * NEQ expr
+          expr ::= expr * AND expr
+          expr ::= expr * OR expr
+
+                            OR shift  19
+                           AND shift  32
+                            EQ shift  28
+                           NEQ shift  30
+                         BTHAN shift  26
+                         LTHAN shift  24
+                           LEQ shift  20
+                           BEQ shift  22
+                           ADD shift  10
+                           SUB shift  14
+                           MUL shift  31
+                           DIV shift  18
+                        RPAREN shift  4
+
+State 39:
+          statement ::= expr * SEMICOLON
+          expr ::= expr * ADD expr
+          expr ::= expr * SUB expr
+          expr ::= expr * MUL expr
+          expr ::= expr * DIV expr
+          expr ::= expr * LEQ expr
+          expr ::= expr * BEQ expr
+          expr ::= expr * LTHAN expr
+          expr ::= expr * BTHAN expr
+          expr ::= expr * EQ expr
+          expr ::= expr * NEQ expr
+          expr ::= expr * AND expr
+          expr ::= expr * OR expr
+
+                            OR shift  19
+                           AND shift  32
+                            EQ shift  28
+                           NEQ shift  30
+                         BTHAN shift  26
+                         LTHAN shift  24
+                           LEQ shift  20
+                           BEQ shift  22
+                           ADD shift  10
+                           SUB shift  14
+                           MUL shift  31
+                           DIV shift  18
+                     SEMICOLON shift  73
+
+State 40:
+          statement ::= FOR LPAREN expr SEMICOLON expr * SEMICOLON expr RPAREN statement
+          expr ::= expr * ADD expr
+          expr ::= expr * SUB expr
+          expr ::= expr * MUL expr
+          expr ::= expr * DIV expr
+          expr ::= expr * LEQ expr
+          expr ::= expr * BEQ expr
+          expr ::= expr * LTHAN expr
+          expr ::= expr * BTHAN expr
+          expr ::= expr * EQ expr
+          expr ::= expr * NEQ expr
+          expr ::= expr * AND expr
+          expr ::= expr * OR expr
+
+                            OR shift  19
+                           AND shift  32
+                            EQ shift  28
+                           NEQ shift  30
+                         BTHAN shift  26
+                         LTHAN shift  24
+                           LEQ shift  20
+                           BEQ shift  22
+                           ADD shift  10
+                           SUB shift  14
+                           MUL shift  31
+                           DIV shift  18
+                     SEMICOLON shift  25
+
+State 41:
+          variableDeclaration ::= INT IDEN ASSIGN expr * SEMICOLON
+          expr ::= expr * ADD expr
+          expr ::= expr * SUB expr
+          expr ::= expr * MUL expr
+          expr ::= expr * DIV expr
+          expr ::= expr * LEQ expr
+          expr ::= expr * BEQ expr
+          expr ::= expr * LTHAN expr
+          expr ::= expr * BTHAN expr
+          expr ::= expr * EQ expr
+          expr ::= expr * NEQ expr
+          expr ::= expr * AND expr
+          expr ::= expr * OR expr
+
+                            OR shift  19
+                           AND shift  32
+                            EQ shift  28
+                           NEQ shift  30
+                         BTHAN shift  26
+                         LTHAN shift  24
+                           LEQ shift  20
+                           BEQ shift  22
+                           ADD shift  10
+                           SUB shift  14
+                           MUL shift  31
+                           DIV shift  18
+                     SEMICOLON shift  74
+
+State 42:
+          statement ::= WHILE LPAREN expr * RPAREN statement
+          expr ::= expr * ADD expr
+          expr ::= expr * SUB expr
+          expr ::= expr * MUL expr
+          expr ::= expr * DIV expr
+          expr ::= expr * LEQ expr
+          expr ::= expr * BEQ expr
+          expr ::= expr * LTHAN expr
+          expr ::= expr * BTHAN expr
+          expr ::= expr * EQ expr
+          expr ::= expr * NEQ expr
+          expr ::= expr * AND expr
+          expr ::= expr * OR expr
+
+                            OR shift  19
+                           AND shift  32
+                            EQ shift  28
+                           NEQ shift  30
+                         BTHAN shift  26
+                         LTHAN shift  24
+                           LEQ shift  20
+                           BEQ shift  22
+                           ADD shift  10
+                           SUB shift  14
+                           MUL shift  31
+                           DIV shift  18
+                        RPAREN shift  6
+
+State 43:
+     (17) expr ::= IDEN ASSIGN expr *
+          expr ::= expr * ADD expr
+          expr ::= expr * SUB expr
+          expr ::= expr * MUL expr
+          expr ::= expr * DIV expr
+          expr ::= expr * LEQ expr
+          expr ::= expr * BEQ expr
+          expr ::= expr * LTHAN expr
+          expr ::= expr * BTHAN expr
+          expr ::= expr * EQ expr
+          expr ::= expr * NEQ expr
+          expr ::= expr * AND expr
+          expr ::= expr * OR expr
+
+                            OR shift  19
+                           AND shift  32
+                            EQ shift  28
+                           NEQ shift  30
+                         BTHAN shift  26
+                         LTHAN shift  24
+                           LEQ shift  20
+                           BEQ shift  22
+                           ADD shift  10
+                           SUB shift  14
+                           MUL shift  31
+                           DIV shift  18
+                     {default} reduce 17
+
+State 44:
+     (20) expr ::= IDEN MEQ expr *
+          expr ::= expr * ADD expr
+          expr ::= expr * SUB expr
+          expr ::= expr * MUL expr
+          expr ::= expr * DIV expr
+          expr ::= expr * LEQ expr
+          expr ::= expr * BEQ expr
+          expr ::= expr * LTHAN expr
+          expr ::= expr * BTHAN expr
+          expr ::= expr * EQ expr
+          expr ::= expr * NEQ expr
+          expr ::= expr * AND expr
+          expr ::= expr * OR expr
+
+                            OR shift  19
+                           AND shift  32
+                            EQ shift  28
+                           NEQ shift  30
+                         BTHAN shift  26
+                         LTHAN shift  24
+                           LEQ shift  20
+                           BEQ shift  22
+                           ADD shift  10
+                           SUB shift  14
+                           MUL shift  31
+                           DIV shift  18
+                     {default} reduce 20
+
+State 45:
+     (19) expr ::= IDEN SEQ expr *
+          expr ::= expr * ADD expr
+          expr ::= expr * SUB expr
+          expr ::= expr * MUL expr
+          expr ::= expr * DIV expr
+          expr ::= expr * LEQ expr
+          expr ::= expr * BEQ expr
+          expr ::= expr * LTHAN expr
+          expr ::= expr * BTHAN expr
+          expr ::= expr * EQ expr
+          expr ::= expr * NEQ expr
+          expr ::= expr * AND expr
+          expr ::= expr * OR expr
+
+                            OR shift  19
+                           AND shift  32
+                            EQ shift  28
+                           NEQ shift  30
+                         BTHAN shift  26
+                         LTHAN shift  24
+                           LEQ shift  20
+                           BEQ shift  22
+                           ADD shift  10
+                           SUB shift  14
+                           MUL shift  31
+                           DIV shift  18
+                     {default} reduce 19
+
+State 46:
+     (18) expr ::= IDEN PEQ expr *
+          expr ::= expr * ADD expr
+          expr ::= expr * SUB expr
+          expr ::= expr * MUL expr
+          expr ::= expr * DIV expr
+          expr ::= expr * LEQ expr
+          expr ::= expr * BEQ expr
+          expr ::= expr * LTHAN expr
+          expr ::= expr * BTHAN expr
+          expr ::= expr * EQ expr
+          expr ::= expr * NEQ expr
+          expr ::= expr * AND expr
+          expr ::= expr * OR expr
+
+                            OR shift  19
+                           AND shift  32
+                            EQ shift  28
+                           NEQ shift  30
+                         BTHAN shift  26
+                         LTHAN shift  24
+                           LEQ shift  20
+                           BEQ shift  22
+                           ADD shift  10
+                           SUB shift  14
+                           MUL shift  31
+                           DIV shift  18
+                     {default} reduce 18
+
+State 47:
+     (21) expr ::= IDEN DEQ expr *
+          expr ::= expr * ADD expr
+          expr ::= expr * SUB expr
+          expr ::= expr * MUL expr
+          expr ::= expr * DIV expr
+          expr ::= expr * LEQ expr
+          expr ::= expr * BEQ expr
+          expr ::= expr * LTHAN expr
+          expr ::= expr * BTHAN expr
+          expr ::= expr * EQ expr
+          expr ::= expr * NEQ expr
+          expr ::= expr * AND expr
+          expr ::= expr * OR expr
+
+                            OR shift  19
+                           AND shift  32
+                            EQ shift  28
+                           NEQ shift  30
+                         BTHAN shift  26
+                         LTHAN shift  24
+                           LEQ shift  20
+                           BEQ shift  22
+                           ADD shift  10
+                           SUB shift  14
+                           MUL shift  31
+                           DIV shift  18
+                     {default} reduce 21
+
+State 48:
+          expr ::= expr * ADD expr
+          expr ::= expr * SUB expr
+          expr ::= expr * MUL expr
+          expr ::= expr * DIV expr
+          expr ::= expr * LEQ expr
+          expr ::= expr * BEQ expr
+          expr ::= expr * LTHAN expr
+          expr ::= expr * BTHAN expr
+          expr ::= expr * EQ expr
+          expr ::= expr * NEQ expr
+          expr ::= expr * AND expr
+          expr ::= expr * OR expr
+     (33) expr ::= expr OR expr *
+
+                           AND shift  32
+                            EQ shift  28
+                           NEQ shift  30
+                         BTHAN shift  26
+                         LTHAN shift  24
+                           LEQ shift  20
+                           BEQ shift  22
+                           ADD shift  10
+                           SUB shift  14
+                           MUL shift  31
+                           DIV shift  18
+                     {default} reduce 33
+
+State 49:
+          expr ::= expr * ADD expr
+          expr ::= expr * SUB expr
+          expr ::= expr * MUL expr
+          expr ::= expr * DIV expr
+          expr ::= expr * LEQ expr
+          expr ::= expr * BEQ expr
+          expr ::= expr * LTHAN expr
+          expr ::= expr * BTHAN expr
+          expr ::= expr * EQ expr
+          expr ::= expr * NEQ expr
+          expr ::= expr * AND expr
+     (32) expr ::= expr AND expr *
+          expr ::= expr * OR expr
+
+                            EQ shift  28
+                           NEQ shift  30
+                         BTHAN shift  26
+                         LTHAN shift  24
+                           LEQ shift  20
+                           BEQ shift  22
+                           ADD shift  10
+                           SUB shift  14
+                           MUL shift  31
+                           DIV shift  18
+                     {default} reduce 32
+
+State 50:
+          expr ::= expr * ADD expr
+          expr ::= expr * SUB expr
+          expr ::= expr * MUL expr
+          expr ::= expr * DIV expr
+          expr ::= expr * LEQ expr
+          expr ::= expr * BEQ expr
+          expr ::= expr * LTHAN expr
+          expr ::= expr * BTHAN expr
+          expr ::= expr * EQ expr
+          expr ::= expr * NEQ expr
+     (31) expr ::= expr NEQ expr *
+          expr ::= expr * AND expr
+          expr ::= expr * OR expr
+
+                         BTHAN shift  26
+                         LTHAN shift  24
+                           LEQ shift  20
+                           BEQ shift  22
+                           ADD shift  10
+                           SUB shift  14
+                           MUL shift  31
+                           DIV shift  18
+                     {default} reduce 31
+
+State 51:
+          expr ::= expr * ADD expr
+          expr ::= expr * SUB expr
+          expr ::= expr * MUL expr
+          expr ::= expr * DIV expr
+          expr ::= expr * LEQ expr
+          expr ::= expr * BEQ expr
+          expr ::= expr * LTHAN expr
+          expr ::= expr * BTHAN expr
+          expr ::= expr * EQ expr
+     (30) expr ::= expr EQ expr *
+          expr ::= expr * NEQ expr
+          expr ::= expr * AND expr
+          expr ::= expr * OR expr
+
+                         BTHAN shift  26
+                         LTHAN shift  24
+                           LEQ shift  20
+                           BEQ shift  22
+                           ADD shift  10
+                           SUB shift  14
+                           MUL shift  31
+                           DIV shift  18
+                     {default} reduce 30
+
+State 52:
+          expr ::= IDEN * ASSIGN expr
+          expr ::= IDEN * PEQ expr
+          expr ::= IDEN * SEQ expr
+          expr ::= IDEN * MEQ expr
+          expr ::= IDEN * DEQ expr
+     (36) expr ::= IDEN *
+
+                        ASSIGN shift  12
+                           PEQ shift  9
+                           SEQ shift  16
+                           MEQ shift  27
+                           DEQ shift  33
+                     {default} reduce 36
+
+State 53:
+          expr ::= expr * ADD expr
+          expr ::= expr * SUB expr
+          expr ::= expr * MUL expr
+          expr ::= expr * DIV expr
+          expr ::= expr * LEQ expr
+          expr ::= expr * BEQ expr
+     (27) expr ::= expr BEQ expr *
+          expr ::= expr * LTHAN expr
+          expr ::= expr * BTHAN expr
+          expr ::= expr * EQ expr
+          expr ::= expr * NEQ expr
+          expr ::= expr * AND expr
+          expr ::= expr * OR expr
+
+                           ADD shift  10
+                           SUB shift  14
+                           MUL shift  31
+                           DIV shift  18
+                     {default} reduce 27
+
+State 54:
+          expr ::= expr * ADD expr
+          expr ::= expr * SUB expr
+          expr ::= expr * MUL expr
+          expr ::= expr * DIV expr
+          expr ::= expr * LEQ expr
+          expr ::= expr * BEQ expr
+          expr ::= expr * LTHAN expr
+          expr ::= expr * BTHAN expr
+     (29) expr ::= expr BTHAN expr *
+          expr ::= expr * EQ expr
+          expr ::= expr * NEQ expr
+          expr ::= expr * AND expr
+          expr ::= expr * OR expr
+
+                           ADD shift  10
+                           SUB shift  14
+                           MUL shift  31
+                           DIV shift  18
+                     {default} reduce 29
+
+State 55:
+          expr ::= expr * ADD expr
+          expr ::= expr * SUB expr
+          expr ::= expr * MUL expr
+          expr ::= expr * DIV expr
+          expr ::= expr * LEQ expr
+     (26) expr ::= expr LEQ expr *
+          expr ::= expr * BEQ expr
+          expr ::= expr * LTHAN expr
+          expr ::= expr * BTHAN expr
+          expr ::= expr * EQ expr
+          expr ::= expr * NEQ expr
+          expr ::= expr * AND expr
+          expr ::= expr * OR expr
+
+                           ADD shift  10
+                           SUB shift  14
+                           MUL shift  31
+                           DIV shift  18
+                     {default} reduce 26
+
+State 56:
+          expr ::= expr * ADD expr
+          expr ::= expr * SUB expr
+          expr ::= expr * MUL expr
+          expr ::= expr * DIV expr
+          expr ::= expr * LEQ expr
+          expr ::= expr * BEQ expr
+          expr ::= expr * LTHAN expr
+     (28) expr ::= expr LTHAN expr *
+          expr ::= expr * BTHAN expr
+          expr ::= expr * EQ expr
+          expr ::= expr * NEQ expr
+          expr ::= expr * AND expr
+          expr ::= expr * OR expr
+
+                           ADD shift  10
+                           SUB shift  14
+                           MUL shift  31
+                           DIV shift  18
+                     {default} reduce 28
+
+State 57:
+          expr ::= expr * ADD expr
+     (22) expr ::= expr ADD expr *
+          expr ::= expr * SUB expr
+          expr ::= expr * MUL expr
+          expr ::= expr * DIV expr
+          expr ::= expr * LEQ expr
+          expr ::= expr * BEQ expr
+          expr ::= expr * LTHAN expr
+          expr ::= expr * BTHAN expr
+          expr ::= expr * EQ expr
+          expr ::= expr * NEQ expr
+          expr ::= expr * AND expr
+          expr ::= expr * OR expr
+
+                           MUL shift  31
+                           DIV shift  18
+                     {default} reduce 22
+
+State 58:
+          variableDeclaration ::= INT IDEN * ASSIGN expr SEMICOLON
+          variableDeclaration ::= INT IDEN * SEMICOLON
+
+                        ASSIGN shift  23
+                     SEMICOLON shift  76
+
+State 59:
+          expr ::= expr * ADD expr
+          expr ::= expr * SUB expr
+     (23) expr ::= expr SUB expr *
+          expr ::= expr * MUL expr
+          expr ::= expr * DIV expr
+          expr ::= expr * LEQ expr
+          expr ::= expr * BEQ expr
+          expr ::= expr * LTHAN expr
+          expr ::= expr * BTHAN expr
+          expr ::= expr * EQ expr
+          expr ::= expr * NEQ expr
+          expr ::= expr * AND expr
+          expr ::= expr * OR expr
+
+                           MUL shift  31
+                           DIV shift  18
+                     {default} reduce 23
+
+State 60:
+          statement ::= FOR * LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN statement
+
+                        LPAREN shift  17
+
+State 61:
+          statement ::= IF * LPAREN expr RPAREN statement
+          statement ::= IF * LPAREN expr RPAREN statement ELSE statement
+
+                        LPAREN shift  13
+
+State 62:
+          variableDeclaration ::= INT * IDEN ASSIGN expr SEMICOLON
+          variableDeclaration ::= INT * IDEN SEMICOLON
+
+                          IDEN shift  58
+
+State 63:
+      (8) statement ::= IF LPAREN expr RPAREN statement *
+          statement ::= IF LPAREN expr RPAREN statement * ELSE statement
+
+                          ELSE shift  8
+                          ELSE reduce 8   ** Parsing conflict **
+                     {default} reduce 8
+
+State 64:
+          statement ::= WHILE * LPAREN expr RPAREN statement
+
+                        LPAREN shift  29
+
+State 65:
+          statement ::= DO statement * WHILE LPAREN expr RPAREN
+
+                         WHILE shift  66
+
+State 66:
+          statement ::= DO statement WHILE * LPAREN expr RPAREN
+
+                        LPAREN shift  21
+
+State 67:
+     (10) statement ::= WHILE LPAREN expr RPAREN statement *
+
+                     {default} reduce 10
+
+State 68:
+          expr ::= expr * ADD expr
+          expr ::= expr * SUB expr
+          expr ::= expr * MUL expr
+          expr ::= expr * DIV expr
+     (25) expr ::= expr DIV expr *
+          expr ::= expr * LEQ expr
+          expr ::= expr * BEQ expr
+          expr ::= expr * LTHAN expr
+          expr ::= expr * BTHAN expr
+          expr ::= expr * EQ expr
+          expr ::= expr * NEQ expr
+          expr ::= expr * AND expr
+          expr ::= expr * OR expr
+
+                     {default} reduce 25
+
+State 69:
+     (11) statement ::= DO statement WHILE LPAREN expr RPAREN *
+
+                     {default} reduce 11
+
+State 70:
+      (9) statement ::= IF LPAREN expr RPAREN statement ELSE statement *
+
+                     {default} reduce 9
+
+State 71:
+          expr ::= expr * ADD expr
+          expr ::= expr * SUB expr
+          expr ::= expr * MUL expr
+     (24) expr ::= expr MUL expr *
+          expr ::= expr * DIV expr
+          expr ::= expr * LEQ expr
+          expr ::= expr * BEQ expr
+          expr ::= expr * LTHAN expr
+          expr ::= expr * BTHAN expr
+          expr ::= expr * EQ expr
+          expr ::= expr * NEQ expr
+          expr ::= expr * AND expr
+          expr ::= expr * OR expr
+
+                     {default} reduce 24
+
+State 72:
+     (34) expr ::= LPAREN expr RPAREN *
+
+                     {default} reduce 34
+
+State 73:
+      (7) statement ::= expr SEMICOLON *
+
+                     {default} reduce 7
+
+State 74:
+      (5) variableDeclaration ::= INT IDEN ASSIGN expr SEMICOLON *
+
+                     {default} reduce 5
+
+State 75:
+     (35) expr ::= NUMBER *
+
+                     {default} reduce 35
+
+State 76:
+      (6) variableDeclaration ::= INT IDEN SEMICOLON *
+
+                     {default} reduce 6
+
+State 77:
+      (4) declaration ::= statement *
+
+                     {default} reduce 4
+
+State 78:
+     (12) statement ::= FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN statement *
+
+                     {default} reduce 12
+
+State 79:
+      (3) declaration ::= variableDeclaration *
+
+                     {default} reduce 3
+
+State 80:
+      (1) declarationList ::= declarationList declaration *
+
+                     {default} reduce 1
+
+State 81:
+     (13) statement ::= LBRACKET block RBRACKET *
+
+                     {default} reduce 13
+
+State 82:
+     (14) statement ::= SEMICOLON *
+
+                     {default} reduce 14
+
+State 83:
+     (16) block ::= block declaration *
+
+                     {default} reduce 16
+
+State 84:
+     (15) block ::= declaration *
+
+                     {default} reduce 15
+
+----------------------------------------------------
+Symbols:
+    0: $:
+    1: NUMBER
+    2: IDEN
+    3: ASSIGN
+    4: PEQ
+    5: SEQ
+    6: MEQ
+    7: DEQ
+    8: OR
+    9: AND
+   10: EQ
+   11: NEQ
+   12: BTHAN
+   13: LTHAN
+   14: LEQ
+   15: BEQ
+   16: ADD
+   17: SUB
+   18: MUL
+   19: DIV
+   20: LPAREN
+   21: RPAREN
+   22: INT
+   23: SEMICOLON
+   24: IF
+   25: ELSE
+   26: WHILE
+   27: DO
+   28: FOR
+   29: LBRACKET
+   30: RBRACKET
+   31: error:
+   32: expr: NUMBER IDEN LPAREN
+   33: statement: NUMBER IDEN LPAREN SEMICOLON IF WHILE DO FOR LBRACKET
+   34: variableDeclaration: INT
+   35: declaration: NUMBER IDEN LPAREN INT SEMICOLON IF WHILE DO FOR LBRACKET
+   36: block: NUMBER IDEN LPAREN INT SEMICOLON IF WHILE DO FOR LBRACKET
+   37: declarationList: <lambda> NUMBER IDEN LPAREN INT SEMICOLON IF WHILE DO FOR LBRACKET
+   38: program: NUMBER IDEN LPAREN INT SEMICOLON IF WHILE DO FOR LBRACKET

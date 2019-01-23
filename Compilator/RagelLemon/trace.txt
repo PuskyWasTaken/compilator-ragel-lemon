@@ -1,0 +1,591 @@
+
+22 int
+parser >> Input INT
+parser >> Reduce [declarationList ::=].
+parser >> Shift 3
+parser >> Stack: declarationList
+parser >> Shift 62
+parser >> Stack: declarationList INT
+2 a
+parser >> Input IDEN
+parser >> Shift 58
+parser >> Stack: declarationList INT IDEN
+23 ;
+parser >> Input SEMICOLON
+parser >> Shift 76
+parser >> Stack: declarationList INT IDEN SEMICOLON
+22 int
+parser >> Input INT
+parser >> Reduce [variableDeclaration ::= INT IDEN SEMICOLON].
+parser >> Shift 79
+parser >> Stack: declarationList variableDeclaration
+parser >> Reduce [declaration ::= variableDeclaration].
+parser >> Shift 80
+parser >> Stack: declarationList declaration
+parser >> Reduce [declarationList ::= declarationList declaration].
+parser >> Shift 3
+parser >> Stack: declarationList
+parser >> Shift 62
+parser >> Stack: declarationList INT
+2 b
+parser >> Input IDEN
+parser >> Shift 58
+parser >> Stack: declarationList INT IDEN
+3 =
+parser >> Input ASSIGN
+parser >> Shift 23
+parser >> Stack: declarationList INT IDEN ASSIGN
+1 5
+parser >> Input NUMBER
+parser >> Shift 75
+parser >> Stack: declarationList INT IDEN ASSIGN NUMBER
+23 ;
+parser >> Input SEMICOLON
+parser >> Reduce [expr ::= NUMBER].
+parser >> Shift 41
+parser >> Stack: declarationList INT IDEN ASSIGN expr
+parser >> Shift 74
+parser >> Stack: declarationList INT IDEN ASSIGN expr SEMICOLON
+22 int
+parser >> Input INT
+parser >> Reduce [variableDeclaration ::= INT IDEN ASSIGN expr SEMICOLON].
+parser >> Shift 79
+parser >> Stack: declarationList variableDeclaration
+parser >> Reduce [declaration ::= variableDeclaration].
+parser >> Shift 80
+parser >> Stack: declarationList declaration
+parser >> Reduce [declarationList ::= declarationList declaration].
+parser >> Shift 3
+parser >> Stack: declarationList
+parser >> Shift 62
+parser >> Stack: declarationList INT
+2 i
+parser >> Input IDEN
+parser >> Shift 58
+parser >> Stack: declarationList INT IDEN
+23 ;
+parser >> Input SEMICOLON
+parser >> Shift 76
+parser >> Stack: declarationList INT IDEN SEMICOLON
+28 for
+parser >> Input FOR
+parser >> Reduce [variableDeclaration ::= INT IDEN SEMICOLON].
+parser >> Shift 79
+parser >> Stack: declarationList variableDeclaration
+parser >> Reduce [declaration ::= variableDeclaration].
+parser >> Shift 80
+parser >> Stack: declarationList declaration
+parser >> Reduce [declarationList ::= declarationList declaration].
+parser >> Shift 3
+parser >> Stack: declarationList
+parser >> Shift 60
+parser >> Stack: declarationList FOR
+20 (
+parser >> Input LPAREN
+parser >> Shift 17
+parser >> Stack: declarationList FOR LPAREN
+2 i
+parser >> Input IDEN
+parser >> Shift 52
+parser >> Stack: declarationList FOR LPAREN IDEN
+3 =
+parser >> Input ASSIGN
+parser >> Shift 12
+parser >> Stack: declarationList FOR LPAREN IDEN ASSIGN
+1 0
+parser >> Input NUMBER
+parser >> Shift 75
+parser >> Stack: declarationList FOR LPAREN IDEN ASSIGN NUMBER
+23 ;
+parser >> Input SEMICOLON
+parser >> Reduce [expr ::= NUMBER].
+parser >> Shift 43
+parser >> Stack: declarationList FOR LPAREN IDEN ASSIGN expr
+parser >> Reduce [expr ::= IDEN ASSIGN expr].
+parser >> Shift 36
+parser >> Stack: declarationList FOR LPAREN expr
+parser >> Shift 11
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON
+2 i
+parser >> Input IDEN
+parser >> Shift 52
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON IDEN
+13 <
+parser >> Input LTHAN
+parser >> Reduce [expr ::= IDEN].
+parser >> Shift 40
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr
+parser >> Shift 24
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr LTHAN
+1 10
+parser >> Input NUMBER
+parser >> Shift 75
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr LTHAN NUMBER
+23 ;
+parser >> Input SEMICOLON
+parser >> Reduce [expr ::= NUMBER].
+parser >> Shift 56
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr LTHAN expr
+parser >> Reduce [expr ::= expr LTHAN expr].
+parser >> Shift 40
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr
+parser >> Shift 25
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON
+2 i
+parser >> Input IDEN
+parser >> Shift 52
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON IDEN
+4 +=
+parser >> Input PEQ
+parser >> Shift 9
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON IDEN PEQ
+1 1
+parser >> Input NUMBER
+parser >> Shift 75
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON IDEN PEQ NUMBER
+21 )
+parser >> Input RPAREN
+parser >> Reduce [expr ::= NUMBER].
+parser >> Shift 46
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON IDEN PEQ expr
+parser >> Reduce [expr ::= IDEN PEQ expr].
+parser >> Shift 38
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr
+parser >> Shift 4
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN
+29 {
+parser >> Input LBRACKET
+parser >> Shift 1
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET
+26 while
+parser >> Input WHILE
+parser >> Shift 64
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE
+20 (
+parser >> Input LPAREN
+parser >> Shift 29
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN
+1 1
+parser >> Input NUMBER
+parser >> Shift 75
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN NUMBER
+10 ==
+parser >> Input EQ
+parser >> Reduce [expr ::= NUMBER].
+parser >> Shift 42
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr
+parser >> Shift 28
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr EQ
+1 1
+parser >> Input NUMBER
+parser >> Shift 75
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr EQ NUMBER
+21 )
+parser >> Input RPAREN
+parser >> Reduce [expr ::= NUMBER].
+parser >> Shift 51
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr EQ expr
+parser >> Reduce [expr ::= expr EQ expr].
+parser >> Shift 42
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr
+parser >> Shift 6
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN
+29 {
+parser >> Input LBRACKET
+parser >> Shift 1
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET
+24 if
+parser >> Input IF
+parser >> Shift 61
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF
+20 (
+parser >> Input LPAREN
+parser >> Shift 13
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN
+1 3
+parser >> Input NUMBER
+parser >> Shift 75
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN NUMBER
+11 !=
+parser >> Input NEQ
+parser >> Reduce [expr ::= NUMBER].
+parser >> Shift 35
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr
+parser >> Shift 30
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr NEQ
+1 4
+parser >> Input NUMBER
+parser >> Shift 75
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr NEQ NUMBER
+8 ||
+parser >> Input OR
+parser >> Reduce [expr ::= NUMBER].
+parser >> Shift 50
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr NEQ expr
+parser >> Reduce [expr ::= expr NEQ expr].
+parser >> Shift 35
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr
+parser >> Shift 19
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr OR
+1 5
+parser >> Input NUMBER
+parser >> Shift 75
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr OR NUMBER
+11 !=
+parser >> Input NEQ
+parser >> Reduce [expr ::= NUMBER].
+parser >> Shift 48
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr OR expr
+parser >> Shift 30
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr OR expr NEQ
+1 1
+parser >> Input NUMBER
+parser >> Shift 75
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr OR expr NEQ NUMBER
+9 &&
+parser >> Input AND
+parser >> Reduce [expr ::= NUMBER].
+parser >> Shift 50
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr OR expr NEQ expr
+parser >> Reduce [expr ::= expr NEQ expr].
+parser >> Shift 48
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr OR expr
+parser >> Shift 32
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr OR expr AND
+2 a
+parser >> Input IDEN
+parser >> Shift 52
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr OR expr AND IDEN
+13 <
+parser >> Input LTHAN
+parser >> Reduce [expr ::= IDEN].
+parser >> Shift 49
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr OR expr AND expr
+parser >> Shift 24
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr OR expr AND expr LTHAN
+2 b
+parser >> Input IDEN
+parser >> Shift 52
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr OR expr AND expr LTHAN IDEN
+9 &&
+parser >> Input AND
+parser >> Reduce [expr ::= IDEN].
+parser >> Shift 56
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr OR expr AND expr LTHAN expr
+parser >> Reduce [expr ::= expr LTHAN expr].
+parser >> Shift 49
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr OR expr AND expr
+parser >> Reduce [expr ::= expr AND expr].
+parser >> Shift 48
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr OR expr
+parser >> Shift 32
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr OR expr AND
+2 b
+parser >> Input IDEN
+parser >> Shift 52
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr OR expr AND IDEN
+12 >
+parser >> Input BTHAN
+parser >> Reduce [expr ::= IDEN].
+parser >> Shift 49
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr OR expr AND expr
+parser >> Shift 26
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr OR expr AND expr BTHAN
+2 a
+parser >> Input IDEN
+parser >> Shift 52
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr OR expr AND expr BTHAN IDEN
+21 )
+parser >> Input RPAREN
+parser >> Reduce [expr ::= IDEN].
+parser >> Shift 54
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr OR expr AND expr BTHAN expr
+parser >> Reduce [expr ::= expr BTHAN expr].
+parser >> Shift 49
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr OR expr AND expr
+parser >> Reduce [expr ::= expr AND expr].
+parser >> Shift 48
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr OR expr
+parser >> Reduce [expr ::= expr OR expr].
+parser >> Shift 35
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr
+parser >> Shift 5
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN
+29 {
+parser >> Input LBRACKET
+parser >> Shift 1
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN LBRACKET
+1 1
+parser >> Input NUMBER
+parser >> Shift 75
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN LBRACKET NUMBER
+16 +
+parser >> Input ADD
+parser >> Reduce [expr ::= NUMBER].
+parser >> Shift 39
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN LBRACKET expr
+parser >> Shift 10
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN LBRACKET expr ADD
+1 1
+parser >> Input NUMBER
+parser >> Shift 75
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN LBRACKET expr ADD NUMBER
+23 ;
+parser >> Input SEMICOLON
+parser >> Reduce [expr ::= NUMBER].
+parser >> Shift 57
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN LBRACKET expr ADD expr
+parser >> Reduce [expr ::= expr ADD expr].
+parser >> Shift 39
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN LBRACKET expr
+parser >> Shift 73
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN LBRACKET expr SEMICOLON
+30 }
+parser >> Input RBRACKET
+parser >> Reduce [statement ::= expr SEMICOLON].
+parser >> Shift 77
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN LBRACKET statement
+parser >> Reduce [declaration ::= statement].
+parser >> Shift 84
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN LBRACKET declaration
+parser >> Reduce [block ::= declaration].
+parser >> Shift 2
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN LBRACKET block
+parser >> Shift 81
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN LBRACKET block RBRACKET
+25 else
+parser >> Input ELSE
+parser >> Reduce [statement ::= LBRACKET block RBRACKET].
+parser >> Shift 63
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement
+parser >> Shift 8
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE
+24 if
+parser >> Input IF
+parser >> Shift 61
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF
+20 (
+parser >> Input LPAREN
+parser >> Shift 13
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN
+1 4
+parser >> Input NUMBER
+parser >> Shift 75
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN NUMBER
+16 +
+parser >> Input ADD
+parser >> Reduce [expr ::= NUMBER].
+parser >> Shift 35
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr
+parser >> Shift 10
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr ADD
+1 4
+parser >> Input NUMBER
+parser >> Shift 75
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr ADD NUMBER
+17 -
+parser >> Input SUB
+parser >> Reduce [expr ::= NUMBER].
+parser >> Shift 57
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr ADD expr
+parser >> Reduce [expr ::= expr ADD expr].
+parser >> Shift 35
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr
+parser >> Shift 14
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr SUB
+1 4
+parser >> Input NUMBER
+parser >> Shift 75
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr SUB NUMBER
+10 ==
+parser >> Input EQ
+parser >> Reduce [expr ::= NUMBER].
+parser >> Shift 59
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr SUB expr
+parser >> Reduce [expr ::= expr SUB expr].
+parser >> Shift 35
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr
+parser >> Shift 28
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr EQ
+1 3
+parser >> Input NUMBER
+parser >> Shift 75
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr EQ NUMBER
+18 *
+parser >> Input MUL
+parser >> Reduce [expr ::= NUMBER].
+parser >> Shift 51
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr EQ expr
+parser >> Shift 31
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr EQ expr MUL
+1 10
+parser >> Input NUMBER
+parser >> Shift 75
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr EQ expr MUL NUMBER
+17 -
+parser >> Input SUB
+parser >> Reduce [expr ::= NUMBER].
+parser >> Shift 71
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr EQ expr MUL expr
+parser >> Reduce [expr ::= expr MUL expr].
+parser >> Shift 51
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr EQ expr
+parser >> Shift 14
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr EQ expr SUB
+1 2
+parser >> Input NUMBER
+parser >> Shift 75
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr EQ expr SUB NUMBER
+21 )
+parser >> Input RPAREN
+parser >> Reduce [expr ::= NUMBER].
+parser >> Shift 59
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr EQ expr SUB expr
+parser >> Reduce [expr ::= expr SUB expr].
+parser >> Shift 51
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr EQ expr
+parser >> Reduce [expr ::= expr EQ expr].
+parser >> Shift 35
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr
+parser >> Shift 5
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr RPAREN
+29 {
+parser >> Input LBRACKET
+parser >> Shift 1
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr RPAREN LBRACKET
+1 2
+parser >> Input NUMBER
+parser >> Shift 75
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr RPAREN LBRACKET NUMBER
+16 +
+parser >> Input ADD
+parser >> Reduce [expr ::= NUMBER].
+parser >> Shift 39
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr RPAREN LBRACKET expr
+parser >> Shift 10
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr RPAREN LBRACKET expr ADD
+1 2
+parser >> Input NUMBER
+parser >> Shift 75
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr RPAREN LBRACKET expr ADD NUMBER
+23 ;
+parser >> Input SEMICOLON
+parser >> Reduce [expr ::= NUMBER].
+parser >> Shift 57
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr RPAREN LBRACKET expr ADD expr
+parser >> Reduce [expr ::= expr ADD expr].
+parser >> Shift 39
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr RPAREN LBRACKET expr
+parser >> Shift 73
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr RPAREN LBRACKET expr SEMICOLON
+30 }
+parser >> Input RBRACKET
+parser >> Reduce [statement ::= expr SEMICOLON].
+parser >> Shift 77
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr RPAREN LBRACKET statement
+parser >> Reduce [declaration ::= statement].
+parser >> Shift 84
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr RPAREN LBRACKET declaration
+parser >> Reduce [block ::= declaration].
+parser >> Shift 2
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr RPAREN LBRACKET block
+parser >> Shift 81
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr RPAREN LBRACKET block RBRACKET
+25 else
+parser >> Input ELSE
+parser >> Reduce [statement ::= LBRACKET block RBRACKET].
+parser >> Shift 63
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr RPAREN statement
+parser >> Shift 8
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr RPAREN statement ELSE
+29 {
+parser >> Input LBRACKET
+parser >> Shift 1
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr RPAREN statement ELSE LBRACKET
+2 a
+parser >> Input IDEN
+parser >> Shift 52
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr RPAREN statement ELSE LBRACKET IDEN
+3 =
+parser >> Input ASSIGN
+parser >> Shift 12
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr RPAREN statement ELSE LBRACKET IDEN ASSIGN
+1 5
+parser >> Input NUMBER
+parser >> Shift 75
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr RPAREN statement ELSE LBRACKET IDEN ASSIGN NUMBER
+23 ;
+parser >> Input SEMICOLON
+parser >> Reduce [expr ::= NUMBER].
+parser >> Shift 43
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr RPAREN statement ELSE LBRACKET IDEN ASSIGN expr
+parser >> Reduce [expr ::= IDEN ASSIGN expr].
+parser >> Shift 39
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr RPAREN statement ELSE LBRACKET expr
+parser >> Shift 73
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr RPAREN statement ELSE LBRACKET expr SEMICOLON
+30 }
+parser >> Input RBRACKET
+parser >> Reduce [statement ::= expr SEMICOLON].
+parser >> Shift 77
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr RPAREN statement ELSE LBRACKET statement
+parser >> Reduce [declaration ::= statement].
+parser >> Shift 84
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr RPAREN statement ELSE LBRACKET declaration
+parser >> Reduce [block ::= declaration].
+parser >> Shift 2
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr RPAREN statement ELSE LBRACKET block
+parser >> Shift 81
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr RPAREN statement ELSE LBRACKET block RBRACKET
+30 }
+parser >> Input RBRACKET
+parser >> Reduce [statement ::= LBRACKET block RBRACKET].
+parser >> Shift 70
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE IF LPAREN expr RPAREN statement ELSE statement
+parser >> Reduce [statement ::= IF LPAREN expr RPAREN statement ELSE statement].
+parser >> Shift 70
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET IF LPAREN expr RPAREN statement ELSE statement
+parser >> Reduce [statement ::= IF LPAREN expr RPAREN statement ELSE statement].
+parser >> Shift 77
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET statement
+parser >> Reduce [declaration ::= statement].
+parser >> Shift 84
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET declaration
+parser >> Reduce [block ::= declaration].
+parser >> Shift 2
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET block
+parser >> Shift 81
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN LBRACKET block RBRACKET
+30 }
+parser >> Input RBRACKET
+parser >> Reduce [statement ::= LBRACKET block RBRACKET].
+parser >> Shift 67
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET WHILE LPAREN expr RPAREN statement
+parser >> Reduce [statement ::= WHILE LPAREN expr RPAREN statement].
+parser >> Shift 77
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET statement
+parser >> Reduce [declaration ::= statement].
+parser >> Shift 84
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET declaration
+parser >> Reduce [block ::= declaration].
+parser >> Shift 2
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET block
+parser >> Shift 81
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN LBRACKET block RBRACKET
+0 0
+parser >> Input $
+parser >> Reduce [statement ::= LBRACKET block RBRACKET].
+parser >> Shift 78
+parser >> Stack: declarationList FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN statement
+parser >> Reduce [statement ::= FOR LPAREN expr SEMICOLON expr SEMICOLON expr RPAREN statement].
+parser >> Shift 77
+parser >> Stack: declarationList statement
+parser >> Reduce [declaration ::= statement].
+parser >> Shift 80
+parser >> Stack: declarationList declaration
+parser >> Reduce [declarationList ::= declarationList declaration].
+parser >> Shift 3
+parser >> Stack: declarationList
+parser >> Reduce [program ::= declarationList].
+parser >> Accept!
+parser >> Popping $
